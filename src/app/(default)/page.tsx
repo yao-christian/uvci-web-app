@@ -7,10 +7,7 @@ export default function Home() {
           className="px-4 text-center pt-40 pb-56 sm:pb-80 md:pt-20"
         >
           <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block xl:inline">FAITES DÉCOLLER VOTRE</span>
-            <span className="block text-blue-600 xl:inline">
-              BUSINESS EN LIGNE
-            </span>
+            Université Virtuelle de Côte d'Ivoire (UVCI)
           </h1>
           <p className="mt-3 max-w-sm mx-auto text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-2xl lg:max-w-3xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -20,7 +17,7 @@ export default function Home() {
           <div className="mt-5 max-w-md mx-auto flex justify-center items-center flex-col space-y-5 sm:space-y-0 sm:flex-row md:mt-8">
             <a
               href="#"
-              className="min-w-[250px] rounded-md shadow px-8 py-3 text-sm font-medium text-white bg-blue-600 sm:text-base md:mr-3 md:min-w-fit md:py-4 md:text-lg md:px-10"
+              className="min-w-[250px] rounded-md shadow px-8 py-3 text-sm font-medium text-white bg-primary sm:text-base md:mr-3 md:min-w-fit md:py-4 md:text-lg md:px-10"
             >
               Commencer 🚀
             </a>
@@ -58,7 +55,7 @@ export default function Home() {
         <div className="cta-striper-bg px-10 pb-16 pt-10 w-full order-2 text-center md:py-32 lg:w-1/2 lg:order-1">
           <h2 className="font-extrabold text-gray-800 text-2xl sm:text-3xl md:text-5xl">
             <span className="block">PASSEZ À L'ACTION</span>
-            <span className="block text-blue-800">Boostez votre SEO</span>
+            <span className="block text-blue-800">Boostez votre carrière</span>
           </h2>
           <p className="mt-3 text-md mx-auto text-gray-800 max-w-xs sm:text-xl md:mt-5 md:max-w-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
@@ -66,9 +63,9 @@ export default function Home() {
           </p>
           <a
             href="#"
-            className="min-w-[200px] bg-blue-600 mt-5 mx-auto inline-block px-8 py-3 border-transparent font-medium rounded-md text-white text-md md:mt-10 md:text-xl"
+            className="min-w-[200px] bg-primary mt-5 mx-auto inline-block px-8 py-3 border-transparent font-medium rounded-md text-white text-md md:mt-10 md:text-xl"
           >
-            Essayez-le 🔥
+            Essayez maintenant 🔥
           </a>
         </div>
 
@@ -81,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-700 to-blue-500 py-12 px-4 text-center sm:py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="bg-gradient-to-r from-primary to-blue-500 py-12 px-4 text-center sm:py-16 sm:px-6 lg:px-8 lg:py-20">
         <h2 className="text-3xl font-extrabold text-white md:text-5xl">
           10K+ Développeurs déjà convaincus
         </h2>
@@ -115,7 +112,7 @@ export default function Home() {
       </section>
 
       <div className="text-center max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-5xl font-extrabold text-gray-900">Prices range</h1>
+        <h1 className="text-5xl font-extrabold text-gray-900">Formations</h1>
         <hr className="mt-5 w-1/4 mx-auto" />
         <p className="mt-5 text-xl text-black-800">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
@@ -124,19 +121,7 @@ export default function Home() {
 
         <div className="mt-8 flex flex-wrap justify-center items-center flex-col space-x-0 md:space-x-10 md:flex-row">
           <div className="flex flex-col max-w-sm min-h-[450px] shadow-md ring-1 ring-zinc-300 w-72 h-full border border-gray-200 rounded-lg mt-5 px-6 py-4 text-left">
-            <div className="mb-5">
-              <h2 className="text-2xl font-bold text-gray-900">Basic</h2>
-              <p className="text-md text-gray-800">Fill your basic needs</p>
-              <p className="mt-2">
-                <span className="text-4xl font-extrabold text-gray-900">
-                  12€
-                </span>
-                <span className="font-medium text-black-800">/month</span>
-              </p>
-              <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">
-                Included :
-              </h3>
-            </div>
+            <h2 className="mb-10 text-2xl font-bold text-gray-900">Licence</h2>
 
             <ul className="flex flex-grow flex-shrink-0 flex-col">
               <li className="flex space-x-3 py-2">
@@ -182,19 +167,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col max-w-sm min-h-[450px] shadow-md ring-1 ring-zinc-300 w-72 h-full border border-gray-200 rounded-lg mt-5 px-6 py-4 text-left">
-            <div className="mb-5">
-              <h2 className="text-2xl font-bold text-gray-900">Freelance</h2>
-              <p className="text-md text-gray-800">Go to the next level</p>
-              <p className="mt-2">
-                <span className="text-4xl font-extrabold text-gray-900">
-                  29€
-                </span>
-                <span className="font-medium text-black-800">/month</span>
-              </p>
-              <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">
-                Included :
-              </h3>
-            </div>
+            <h2 className="mb-10 text-2xl font-bold text-gray-900">Master</h2>
 
             <ul className="flex flex-grow flex-shrink-0 flex-col">
               <li className="flex space-x-3 py-2">
@@ -239,19 +212,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="flex flex-col max-w-sm min-h-[450px] shadow-md ring-1 ring-zinc-300 w-72 h-full border border-gray-200 rounded-lg mt-5 px-6 py-4 text-left">
-            <div className="mb-5">
-              <h2 className="text-2xl font-bold text-gray-900">Professional</h2>
-              <p className="text-md text-gray-800">Enter the pro world</p>
-              <p className="mt-2">
-                <span className="text-4xl font-extrabold text-gray-900">
-                  99€
-                </span>
-                <span className="font-medium text-black-800">/month</span>
-              </p>
-              <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">
-                Included :
-              </h3>
-            </div>
+            <h2 className="mb-10 text-2xl font-bold text-gray-900">Doctorat</h2>
 
             <ul className="flex flex-grow flex-shrink-0 flex-col">
               <li className="flex space-x-3 py-2">
@@ -403,7 +364,7 @@ export default function Home() {
             />
           </div>
 
-          <button className="py-3 px-6 border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-700">
+          <button className="py-3 px-6 border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary">
             Envoyer
           </button>
         </form>
