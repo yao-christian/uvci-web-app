@@ -12,22 +12,9 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
     title: "Tableau de bord",
     url: "/",
   },
-  // {
-  //   title: 'Colis',
-  //   subMenus: [
-  //     { title: 'Liste colis', url: '/parcels/parcel-list' },
-  //     { title: 'Ajouter un colis', url: '/parcels/add-parcel' },
-  //   ],
-  // },
   {
     title: "Habitants",
-    subMenus: [
-      { title: "Liste habitants", url: "/admin/habitants/liste-habitants" },
-      {
-        title: "Ajouter un habitant",
-        url: "/admin/habitants/nouveau-habitant",
-      },
-    ],
+    url: "/admin/residents",
   },
   {
     title: "Maladies",

@@ -17,49 +17,49 @@ export default function PharmacyList({ pharmacies }: PropsType) {
 
       <div className="w-full overflow-x-auto">
         <table
-          className="w-full text-left border border-collapse rounded sm:border-separate border-slate-200"
+          className="w-full text-left border border-collapse rounded sm:border-separate border-gray-200"
           cellSpacing={0}
         >
           <tbody>
             <tr>
               <th
                 scope="col"
-                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100"
+                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-gray-700 text-gray-700 bg-gray-100"
               >
                 N°
               </th>
               <th
                 scope="col"
-                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100"
+                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-gray-700 text-gray-700 bg-gray-100"
               >
                 Nom
               </th>
               <th
                 scope="col"
-                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100"
+                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-gray-700 text-gray-700 bg-gray-100"
               >
                 Localisation
               </th>
               <th
                 scope="col"
-                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100"
+                className="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-gray-700 text-gray-700 bg-gray-100"
               >
                 Actions
               </th>
             </tr>
             {pharmacies.map((pharmacy, index) => (
               <tr key={pharmacy.id}>
-                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-gray-200 stroke-gray-500 text-gray-500">
                   {index + 1}
                 </td>
-                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-gray-200 stroke-gray-500 text-gray-500">
                   {pharmacy.name}
                 </td>
-                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-gray-200 stroke-gray-500 text-gray-500">
                   {pharmacy.location}
                 </td>
-                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                  <button className="btn btn-link">Modifier</button>
+                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-gray-200 stroke-gray-500">
+                  <button className="btn btn-primary">Détails</button>
                 </td>
               </tr>
             ))}

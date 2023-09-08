@@ -8,7 +8,7 @@
   }
 
   .input {
-    @apply focus:outline-0;
+    @apply focus:outline-0 input-sm rounded input-bordered;
   }
 
   .stats {
@@ -19,7 +19,13 @@
     @apply border-b-4 border-b-primary bg-gray-100;
   }
 
-  .ng-touched {
+  /* Card */
+  .card {
+    @apply bg-white rounded shadow-sm;
+  }
+
+  .card-title {
+    @apply text-[1em];
   }
 }
 

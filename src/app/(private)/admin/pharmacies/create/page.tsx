@@ -45,23 +45,25 @@ export default function CreatePharmacyPage() {
   };
 
   return (
-    <form className="max-w-lg mx-auto card shadow bg-white">
+    <form className="max-w-lg mx-auto card">
       <div className="card-body">
-        <h2 className="card-title mb-2">Ajouter une pharmacie</h2>
+        <h2 className="card-title mb-4">Ajouter une pharmacie</h2>
 
-        <Input
-          isRequired
-          {...register("name")}
-          error={errors.name?.message}
-          placeholder="Nom"
-        />
+        <div className="space-y-6">
+          <Input
+            isRequired
+            {...register("name")}
+            error={errors.name?.message}
+            placeholder="Nom"
+          />
 
-        <Input
-          isRequired
-          {...register("location")}
-          error={errors.location?.message}
-          placeholder="Localisation"
-        />
+          <Input
+            isRequired
+            {...register("location")}
+            error={errors.location?.message}
+            placeholder="Localisation"
+          />
+        </div>
 
         <div className="card-actions justify-end mt-5">
           <Button
