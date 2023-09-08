@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith("/api/protected") ||
     request.nextUrl.pathname.startsWith("/admin")
   ) {
-    await isAuthenticatedMiddleware(request);
+    return await privateRouteMiddleware(request);
   }
 
   if (
@@ -24,12 +24,12 @@ export async function middleware(request: NextRequest) {
   }
 }
 
-async function isAuthenticatedMiddleware(request: NextRequest) {
+async function privateRouteMiddleware(request: NextRequest) {
   const isAuthenticatedResponse = await isAuthenticated(request);
   if (!isAuthenticatedResponse) {
     if (request.nextUrl.pathname.startsWith("/api/protected")) {
       return new NextResponse(
-        JSON.stringify({ success: false, message: "Connexion obligatoire" }),
+        JSON.stringify({ success: false, message: "Veuillez vous connecter" }),
         { status: 401, headers: { "content-type": "application/json" } }
       );
     } else {

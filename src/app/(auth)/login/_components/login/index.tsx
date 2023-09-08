@@ -10,9 +10,12 @@ import { UserCredentials } from "@/core/models/user";
 import { signin } from "@/core/requests/auth";
 
 import schema from "./schema";
+import Button from "@/shared/components/button";
+import { useState } from "react";
 
 export default function Login() {
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
@@ -24,10 +27,13 @@ export default function Login() {
 
   const handleSignin: SubmitHandler<UserCredentials> = async (data) => {
     try {
+      setIsSubmitting(true);
       await signin(data);
-      router.replace("/admin/profile");
+      router.replace("/");
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -75,12 +81,13 @@ export default function Login() {
         </a>
       </div>
 
-      <button
+      <Button
+        isLoading={isSubmitting}
         onClick={handleSubmit(handleSignin)}
-        className="w-full mt-4 bg-primary-700 shadow p-2 rounded text-primary-100"
+        className="w-full mt-4 bg-primary shadow p-2 rounded text-white"
       >
         SE CONNECTER
-      </button>
+      </Button>
     </form>
   );
 }

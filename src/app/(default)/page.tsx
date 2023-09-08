@@ -310,7 +310,10 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="contact" className="bg-gray-50 pb-32 md:pb-40">
+      <section
+        id="contact"
+        className="bg-gray-50 pb-32 border-gray-900 md:pb-40"
+      >
         <h2 className="text-center font-medium pt-10 pb-6 text-3xl md:text-4xl">
           Rentrons en contact
         </h2>

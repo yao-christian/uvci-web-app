@@ -1,8 +1,21 @@
+"use client";
+
+import { logout } from "@/core/requests/auth";
 import Link from "next/link";
+import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
 type PropsType = React.BaseHTMLAttributes<HTMLElement>;
 
 export default function Header({ ...restProps }: PropsType) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  async function handleLogout() {
+    await logout();
+    router.refresh();
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-20" {...restProps}>
       <nav className="navbar bg-white shadow-sm z-10">
@@ -27,18 +40,22 @@ export default function Header({ ...restProps }: PropsType) {
           </label>
 
           <Link href="/" className="btn btn-ghost normal-case text-xl">
-            <img className="h-[30px]" src="/images/logo.png" alt="" />
+            <Image width={30} height={30} src="/images/logo.png" alt="" />
           </Link>
 
           <div className="invisible ml-auto mr-5 md:visible">
-            <ul className=" space-x-5 flex ">
-              <li role="none">
+            <ul className="space-x-5 flex">
+              <li>
+                <Link href="/">
+                  <span>Accueil</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/pharmacies">
-                  {" "}
                   <span>Pharmacies</span>
                 </Link>
               </li>
-              <li role="none">
+              <li>
                 <Link href="/">
                   <span>Centres de santé</span>
                 </Link>
@@ -57,7 +74,12 @@ export default function Header({ ...restProps }: PropsType) {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="https://www.svgrepo.com/show/5125/avatar.svg" />
+                <Image
+                  width={30}
+                  height={30}
+                  src="https://www.svgrepo.com/show/5125/avatar.svg"
+                  alt=""
+                />
               </div>
             </label>
             <ul
@@ -69,9 +91,11 @@ export default function Header({ ...restProps }: PropsType) {
                   Mon profil
                 </Link>
               </li>
-              <li>
-                <button>Se déconecter</button>
-              </li>
+              {pathname.startsWith("/admin") && (
+                <li>
+                  <button onClick={handleLogout}>Se déconecter</button>
+                </li>
+              )}
             </ul>
           </div>
         </div>

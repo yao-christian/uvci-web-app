@@ -9,7 +9,7 @@ export default function Button({
   ...restProps
 }: PropsType) {
   return (
-    <button className="btn" {...restProps}>
+    <button className="btn" disabled={isLoading} {...restProps}>
       {isLoading && <span className="loading loading-spinner" />}
       {children}
     </button>
