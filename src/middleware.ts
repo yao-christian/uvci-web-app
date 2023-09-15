@@ -1,32 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { isAuthenticated } from "@/core/services/auth";
+import { isAuthenticated } from "@/core/services/auth/check-authentication";
 
 export const config = {
-  matcher: ["/api/protected", "/admin/:path*", "/login", "/register"],
+  matcher: ["/api/protected", "/admin/:path*"],
 };
 
 export async function middleware(request: NextRequest) {
-  if (
-    request.nextUrl.pathname.startsWith("/api/protected") ||
-    request.nextUrl.pathname.startsWith("/admin")
-  ) {
-    return await privateRouteMiddleware(request);
-  }
-
-  if (
-    request.nextUrl.pathname === "/login" ||
-    request.nextUrl.pathname === "/register"
-  ) {
-    const isAuthenticatedResponse = await isAuthenticated(request);
-    if (isAuthenticatedResponse) {
-      return NextResponse.redirect(new URL("/", request.url));
-    }
-  }
+  const isAuthenticatedResponse = await isAuthenticated(request);
+  return privateRouteMiddleware(request, isAuthenticatedResponse);
 }
 
-async function privateRouteMiddleware(request: NextRequest) {
-  const isAuthenticatedResponse = await isAuthenticated(request);
-  if (!isAuthenticatedResponse) {
+async function privateRouteMiddleware(
+  request: NextRequest,
+  isAuthenticated: boolean
+) {
+  if (!isAuthenticated) {
     if (request.nextUrl.pathname.startsWith("/api/protected")) {
       return new NextResponse(
         JSON.stringify({ success: false, message: "Veuillez vous connecter" }),

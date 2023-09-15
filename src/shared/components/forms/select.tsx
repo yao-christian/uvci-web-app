@@ -9,7 +9,7 @@ type PropsType = {
   isRequired?: boolean;
   error?: string;
   placeholder?: string;
-  options: { value: string; label: string }[];
+  options: { value: any; label: string }[];
   styles?: StylesConfig;
 };
 

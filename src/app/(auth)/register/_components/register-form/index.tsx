@@ -1,30 +1,42 @@
 "use client";
 
+import { useState } from "react";
+
 import { Input } from "@/shared/components/forms";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { User } from "@/core/models/user";
-import { signin } from "@/core/requests/auth";
+import { CreateUserDto } from "@/core/models";
+import { signup } from "@/core/requests/auth";
+import Button from "@/shared/components/button";
 
 import schema from "./schema";
 
 export default function RegisterForm() {
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<User>({
+  } = useForm<CreateUserDto>({
     resolver: zodResolver(schema),
   });
 
-  const handleSignup: SubmitHandler<User> = (data) => {
-    signin(data).then(() => {
-      router.replace("/admin/profile");
-    });
+  const handleSignup: SubmitHandler<CreateUserDto> = async (values) => {
+    try {
+      const data = {
+        ...values,
+      };
+
+      setIsSubmitting(true);
+      await signup(data);
+      router.replace("/login");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -45,15 +57,6 @@ export default function RegisterForm() {
             {...register("lastName")}
             error={errors.lastName?.message}
             placeholder="Prénoms"
-          />
-        </div>
-
-        <div>
-          <Input
-            isRequired
-            {...register("username")}
-            error={errors.username?.message}
-            placeholder="Nom utilisateur"
           />
         </div>
 
@@ -98,12 +101,13 @@ export default function RegisterForm() {
         </a>
       </div>
 
-      <button
+      <Button
+        isLoading={isSubmitting}
         onClick={handleSubmit(handleSignup)}
-        className="w-full mt-4 bg-primary-700 shadow p-2 rounded text-primary-100"
+        className="w-full mt-4 bg-primary shadow p-2 rounded text-white"
       >
         S'inscrire
-      </button>
+      </Button>
     </form>
   );
 }

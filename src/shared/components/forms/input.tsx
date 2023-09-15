@@ -36,7 +36,7 @@ const Input = forwardRef<HTMLInputElement, PropsType>(
             htmlFor={name}
             className="bock text-sm font-medium text-gray-700"
           >
-            {label} {isRequired && <span className="text-error-600">*</span>}
+            {label} {isRequired && <span className="text-error">*</span>}
           </label>
         )}
 
@@ -50,7 +50,7 @@ const Input = forwardRef<HTMLInputElement, PropsType>(
           {...rest}
         />
 
-        {error && <span className="text-sm text-error-500">{error}</span>}
+        {error && <span className="text-sm text-error">{error}</span>}
       </div>
     );
   }

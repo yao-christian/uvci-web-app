@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { UserCredentials } from "@/core/models/user";
+import { UserCredentials } from "@/core/models";
 
 import { signin } from "@/core/requests/auth";
 
@@ -29,7 +29,7 @@ export default function Login() {
     try {
       setIsSubmitting(true);
       await signin(data);
-      router.replace("/");
+      router.replace("/admin/profile");
     } catch (error) {
       console.error(error);
     } finally {

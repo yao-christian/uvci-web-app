@@ -1,6 +1,6 @@
 import * as bcrypt from "bcrypt";
 import { prisma } from "@/core/data/prisma";
-import { User } from "@/core/models/user";
+import { User } from "@/core/models";
 
 export async function createUser(user: User) {
   const newUser = {
