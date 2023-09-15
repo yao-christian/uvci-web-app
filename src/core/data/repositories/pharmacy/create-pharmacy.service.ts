@@ -1,4 +1,4 @@
-import { prisma } from "@/core/data/prisma";
+import { prisma } from "@/core/data/prisma/prisma-client";
 import { CreatePharmacyDto } from "@/core/models";
 
 import "server-only";

@@ -1,18 +1,21 @@
 import * as bcrypt from "bcrypt";
-import { prisma } from "@/core/data/prisma";
-import { User } from "@/core/models/user";
 
-export async function createUser(user: User) {
+import { CreateUserDto } from "@/core/models";
+import { prisma } from "@/core/data/prisma/prisma-client";
+
+export async function createUser(user: CreateUserDto) {
   const newUser = {
     ...user,
     password: await bcrypt.hash(user.password, 10),
   };
 
-  const createdUser = await prisma.user.create({ data: newUser });
+  const createdUser = await prisma.user.create({
+    data: newUser,
+  });
 
-  const { password, ...rest } = createdUser;
+  const { password, ...restcreatedUser } = createdUser;
 
-  return rest;
+  return restcreatedUser;
 }
 
 export async function getUserByEmail(email: string) {
