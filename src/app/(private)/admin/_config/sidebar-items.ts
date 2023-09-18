@@ -26,7 +26,7 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
   },
   {
     title: "Centres de santé",
-    url: "/admin/centres-sante",
+    url: "/admin/health-centers",
   },
   {
     title: "Métiers",

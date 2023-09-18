@@ -56,7 +56,7 @@ export default function Header({ ...restProps }: PropsType) {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/health-centers">
                   <span>Centres de santé</span>
                 </Link>
               </li>

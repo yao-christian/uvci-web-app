@@ -37,6 +37,14 @@ export function Tr({ children, ...restProps }: PropsTypeOfTr) {
   return <tr {...restProps}>{children}</tr>;
 }
 
+type PropsTypeOfThead = {
+  children: React.ReactNode;
+} & React.ThHTMLAttributes<HTMLElement>;
+
+export function Thead({ children, ...restProps }: PropsTypeOfThead) {
+  return <thead {...restProps}>{children}</thead>;
+}
+
 type PropsTypeOfTbody = {
   children: React.ReactNode;
 } & React.ThHTMLAttributes<HTMLElement>;
