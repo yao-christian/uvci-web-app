@@ -1,5 +1,5 @@
-import { CreateHealthCenterDto } from "@/core/models";
-import { Notify } from "@/core/services/notify";
+import { CreateHealthCenterDto } from "@/core/domain";
+import { notificationService } from "@/core/app/ports/notifications";
 
 const BASE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/health-centers`;
 
@@ -11,7 +11,7 @@ export async function createHealthCenter(data: CreateHealthCenterDto) {
 
   if (!response.ok) {
     const error = "La création de centre de santé échouée, veuillez réessayer";
-    Notify.error(error);
+    notificationService.notify(error, "error");
     throw new Error(error);
   }
 }

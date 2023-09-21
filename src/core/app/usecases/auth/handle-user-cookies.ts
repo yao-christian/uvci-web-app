@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { SignJWT } from "jose";
 
-import { User } from "@/core/models";
+import { User } from "@/core/domain";
 
 export const COOKIE_TOKEN_NAME = "token";
 

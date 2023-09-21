@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { isAuthenticated } from "@/core/services/auth/check-authentication";
+import { isAuthenticated } from "@/core/app/usecases/auth/check-authentication";
 
 export const config = {
   matcher: ["/api/protected", "/admin/:path*"],

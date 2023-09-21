@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { HealthCenter } from "@/core/models";
+import { HealthCenter } from "@/core/domain";
 
 export const columns: ColumnDef<HealthCenter>[] = [
   {

@@ -1,4 +1,4 @@
-import { CreatePharmacyDto } from "@/core/models";
+import { CreatePharmacyDto } from "@/core/domain";
 import * as pharmacyRepositories from "@/core/data/repositories/pharmacy";
 
 import "server-only";

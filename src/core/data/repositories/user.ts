@@ -1,6 +1,6 @@
 import * as bcrypt from "bcrypt";
 
-import { CreateUserDto } from "@/core/models";
+import { CreateUserDto } from "@/core/domain";
 import { prisma } from "@/core/data/prisma/prisma-client";
 
 export async function createUser(user: CreateUserDto) {

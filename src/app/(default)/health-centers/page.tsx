@@ -1,4 +1,4 @@
-import { getHealthCenters } from "@/core/services/health-center";
+import { getHealthCenters } from "@/core/app/usecases/health-center";
 import HealthCenterList from "./health-center-list";
 
 export default async function HealthCenterPage() {

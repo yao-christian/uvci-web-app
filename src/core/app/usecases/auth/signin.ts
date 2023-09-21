@@ -2,7 +2,7 @@ import * as bcrypt from "bcrypt";
 
 import { NextResponse } from "next/server";
 
-import { UserCredentials } from "@/core/models";
+import { UserCredentials } from "@/core/domain";
 
 import { getUserByEmail } from "@/core/data/repositories/user";
 import { setUserCookie } from "./handle-user-cookies";

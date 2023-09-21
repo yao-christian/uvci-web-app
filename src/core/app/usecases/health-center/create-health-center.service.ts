@@ -1,4 +1,4 @@
-import { CreateHealthCenterDto } from "@/core/models";
+import { CreateHealthCenterDto } from "@/core/domain";
 import * as healthRepositories from "@/core/data/repositories/health-center";
 
 import "server-only";

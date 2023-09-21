@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { signin } from "@/core/services/auth/signin";
+import { signin } from "@/core/app/usecases/auth/signin";
 
 export async function POST(request: Request) {
   const body = await request.json();

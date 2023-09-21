@@ -3,7 +3,7 @@ import TableContainer from "@/shared/components/table/table-container";
 
 import { columns } from "./_components/column";
 import AddHealthCenterButton from "./_components/add-health-center-button";
-import { getHealthCenters } from "@/core/services/health-center";
+import { getHealthCenters } from "@/core/app/usecases/health-center";
 
 export default async function HealthCenterPage() {
   const healthCenters = await getHealthCenters();

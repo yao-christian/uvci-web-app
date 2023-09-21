@@ -1,4 +1,4 @@
-import { createHealthCenter } from "@/core/services/health-center/create-health-center.service";
+import { createHealthCenter } from "@/core/app/usecases/health-center";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {

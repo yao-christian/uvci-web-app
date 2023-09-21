@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Pharmacy } from "@/core/models";
+import { Pharmacy } from "@/core/domain";
 import { Tbody, Table, Tr, Th, Td } from "@/shared/components/table/elements";
 import { SimpleTable } from "@/shared/components/table/simple-table";
 

@@ -1,4 +1,4 @@
-import { Pharmacy } from "@/core/models";
+import { Pharmacy } from "@/core/domain";
 
 type PropsType = {
   pharmacies: Pharmacy[];

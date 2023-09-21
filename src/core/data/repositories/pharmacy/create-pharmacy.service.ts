@@ -1,5 +1,5 @@
 import { prisma } from "@/core/data/prisma/prisma-client";
-import { CreatePharmacyDto } from "@/core/models";
+import { CreatePharmacyDto } from "@/core/domain";
 
 import "server-only";
 

@@ -1,4 +1,4 @@
-import { HealthCenter } from "@/core/models";
+import { HealthCenter } from "@/core/domain";
 
 type PropsType = {
   healthCenters: HealthCenter[];

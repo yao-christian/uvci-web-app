@@ -1,4 +1,4 @@
-import { CreatePharmacyDto } from "@/core/models";
+import { CreatePharmacyDto } from "@/core/domain";
 
 export async function createPharmacy(data: CreatePharmacyDto) {
   const response = await fetch("http://localhost:3000/api/pharmacy", {

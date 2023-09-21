@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { expireUserCookie } from "@/core/services/auth/handle-user-cookies";
+import { expireUserCookie } from "@/core/app/usecases/auth/handle-user-cookies";
 
 // Logout user
 export async function DELETE() {

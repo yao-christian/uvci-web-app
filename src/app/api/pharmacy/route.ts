@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createPharmacy } from "@/core/services/pharmacy";
+import { createPharmacy } from "@/core/app/usecases/pharmacy";
 
 export async function POST(request: Request) {
   const body = await request.json();

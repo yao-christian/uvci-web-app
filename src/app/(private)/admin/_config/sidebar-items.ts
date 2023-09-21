@@ -18,7 +18,7 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
   },
   {
     title: "Maladies",
-    url: "/admin/maladies",
+    url: "/admin/diseases",
   },
   {
     title: "Epidemies",

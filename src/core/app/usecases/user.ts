@@ -1,4 +1,4 @@
-import { User } from "@/core/models";
+import { User } from "@/core/domain";
 import * as userRepositories from "@/core/data/repositories/user";
 
 export async function createUser(data: User) {

@@ -7,11 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { CreateHealthCenterDto } from "@/core/models";
+import { CreateHealthCenterDto } from "@/core/domain";
 import { Input, Textarea } from "@/shared/components/form";
 import Drawer from "@/shared/components/drawer";
 import Button from "@/shared/components/button";
-import { createHealthCenter } from "@/core/requests/health-center";
+import { createHealthCenter } from "@/core/services/http-requests/health-center";
 
 type PropsType = {
   isOPen: boolean;

@@ -1,4 +1,4 @@
-import { getPharmacies } from "@/core/services/pharmacy";
+import { getPharmacies } from "@/core/app/usecases/pharmacy";
 import PharmacyList from "@/shared/components/pharmacy/pharmacy-list";
 
 export default async function PharmacyListPage() {
