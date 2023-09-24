@@ -13,7 +13,7 @@ export default function ErrorPage({
         <div className="text-center">
           <p className="font-semibold">Oops!</p>
 
-          <h1 className="text-9xl font-sans font-bold text-error-500">
+          <h1 className="text-9xl font-sans font-bold text-red-500">
             <span>{error}</span>
           </h1>
 
@@ -21,7 +21,7 @@ export default function ErrorPage({
 
           {actionLabel && (
             <div className="mt-8">
-              <a className="bg-error-400 px-5 py-3 text-sm shadow-sm font-medium text-gray-50 rounded-full hover:shadow-lg">
+              <a className="bg-red-400 px-5 py-3 text-sm shadow-sm font-medium text-gray-50 rounded-full hover:shadow-lg">
                 {actionLabel}
               </a>
             </div>

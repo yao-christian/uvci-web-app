@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { UserCredentials } from "@/core/domain";
 
-import { signin } from "@/core/services/http-requests/auth";
+import { signin } from "@/core/infra/http-requests/auth";
 
 import schema from "./schema";
 import Button from "@/shared/components/button";

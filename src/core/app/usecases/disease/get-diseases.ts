@@ -16,13 +16,7 @@ export class GetDiseasesUseCase {
   ) {}
 
   async execute(): Promise<Disease[]> {
-    try {
-      const diseases = await this.diseaseRepository.getAll();
-      return diseases;
-    } catch (error) {
-      console.error(error);
-      throw new Error(`Erreur lors de la récupération des maladies`);
-    }
+    return await this.diseaseRepository.getAll();
   }
 }
 

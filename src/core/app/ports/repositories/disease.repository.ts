@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { container as DIContainer } from "tsyringe";
 
 import { Disease } from "@/core/domain";
-import { PrismaDiseaseRepository } from "@/core/data/repositories/disease.repository";
+import { PrismaDiseaseRepository } from "@/core/infra/data/repositories/disease.repository";
 
 export interface DiseaseRepository {
   create(disease: Disease): Promise<Disease>;

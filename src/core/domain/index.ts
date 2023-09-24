@@ -4,6 +4,12 @@ import type {
   HealthCenter,
   Resident,
   Disease,
+  Epidemic,
+  Profession,
+  Project,
+  Promoter,
+  MedicalService,
+  Info,
 } from "@prisma/client";
 
 // User
@@ -29,3 +35,21 @@ export type CreateResidentDto = Omit<Resident, "id">;
 
 export { Disease };
 export type CreateDiseaseDto = Omit<Disease, "id">;
+
+export { Epidemic };
+export type CreateEpidemicDto = Omit<Epidemic, "id">;
+
+export { Profession };
+export type CreateProfessionDto = Omit<Profession, "id">;
+
+export { Project };
+export type CreateProjectDto = Omit<Project, "id">;
+
+export { Promoter };
+export type CreatePromoterDto = Omit<Promoter, "id">;
+
+export { MedicalService };
+export type CreateMedicalServiceDto = Omit<MedicalService, "id">;
+
+export { Info };
+export type CreateInfoDto = Omit<Info, "id">;

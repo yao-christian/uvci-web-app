@@ -22,7 +22,7 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
   },
   {
     title: "Epidemies",
-    url: "/admin/epidemies",
+    url: "/admin/epidemics",
   },
   {
     title: "Centres de santé",
@@ -34,15 +34,15 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
   },
   {
     title: "Projets",
-    url: "/admin/projets",
+    url: "/admin/projects",
   },
   {
     title: "Promoteurs",
-    url: "/admin/promoteurs",
+    url: "/admin/promoters",
   },
   {
     title: "Services medicaux",
-    url: "/services-medicaux",
+    url: "/admin/medical-services",
   },
   {
     title: "Pharmacies",
@@ -50,10 +50,6 @@ export const SIDEBAR_MENUS: SidebarMenu[] = [
   },
   {
     title: "Informations",
-    url: "/admin/informations",
-  },
-  {
-    title: "Paramètres",
-    url: "/admin/settings",
+    url: "/admin/infos",
   },
 ];

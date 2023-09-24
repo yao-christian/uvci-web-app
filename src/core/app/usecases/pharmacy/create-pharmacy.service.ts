@@ -1,5 +1,5 @@
 import { CreatePharmacyDto } from "@/core/domain";
-import * as pharmacyRepositories from "@/core/data/repositories/pharmacy";
+import * as pharmacyRepositories from "@/core/infra/data/repositories/pharmacy";
 
 import "server-only";
 

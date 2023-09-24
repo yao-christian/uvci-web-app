@@ -1,6 +1,6 @@
 "use client";
 
-import { logout } from "@/core/services/http-requests/auth";
+import { logout } from "@/core/infra/http-requests/auth";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";

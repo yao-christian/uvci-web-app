@@ -3,10 +3,10 @@ import TableContainer from "@/shared/components/table/table-container";
 
 import { columns } from "./_components/column";
 import AddResidentButton from "./_components/add-resident-button";
-import { getResidents } from "@/core/app/usecases/resident";
+import { getResidentsUseCase } from "@/core/app/usecases/resident/get-residents-usecase";
 
 export default async function ResidentPage() {
-  const Residents = await getResidents();
+  const residents = await getResidentsUseCase.execute();
 
   return (
     <TableContainer>
@@ -18,7 +18,7 @@ export default async function ResidentPage() {
         <AddResidentButton />
       </TableContainer.Header>
       <TableContainer.Content>
-        <DataTable columns={columns} data={Residents} />
+        <DataTable columns={columns} data={residents} />
       </TableContainer.Content>
     </TableContainer>
   );

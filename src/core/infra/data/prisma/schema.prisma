@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url =  env("DATABASE_URL")
+}
+
+model Resident {
+  id                 Int       @id @default(autoincrement())
+  firstName          String
+  lastName           String
+  profession         String
+  gender             String
+  age                Int
+  birthCountry       String
+  nationality        String
+  educationLevel     String
+  identificationNumber String
+  email              String
+  phoneNumber        String
+
+  @@map("uvci_residents")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  firstName String
+  lastName  String
+  password  String
+  email     String   @unique
+  enabled   Boolean  @default(false)
+
+  @@map("uvci_users")
+}
+
+model Disease {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  @@map("uvci_disease")
+}
+
+model Epidemic {
+  id           Int      @id @default(autoincrement())
+  name         String
+  startDate    DateTime
+  endDate      DateTime
+  totalCases   Int
+  totalDeaths  Int
+
+  @@map("uvci_epidemics")
+}
+
+model HealthCenter {
+  id          Int     @id @default(autoincrement())
+  name        String
+  location    String
+  phoneNumber String
+
+  @@map("uvci_healthCenters")
+}
+
+model Info {
+  id    Int    @id @default(autoincrement())
+  info String
+  date  DateTime
+  type  String
+
+  @@map("uvci_infos")
+}
+
+model MedicalService {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  @@map("uvci_medicalServices")
+}
+
+model Pharmacy {
+  id   Int    @id @default(autoincrement())
+  name String
+  location String
+
+  @@map("uvci_pharmacies")
+}
+
+model Profession {
+  id   Int    @id @default(autoincrement())
+  name String
+  description String
+
+  @@map("uvci_professions")
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String
+  startDate   DateTime
+  endDate     DateTime
+  description String
+
+  @@map("uvci_projects")
+}
+
+model Promoter {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  @@map("uvci_promoters")
+}

@@ -1,6 +1,6 @@
 import "reflect-metadata";
 
-import { ToastNotificationService } from "@/core/services/notifications";
+import { ToastNotificationService } from "@/core/infra/notifications";
 import { container as DIContainer } from "tsyringe";
 
 export type MessageType = "success" | "error" | "info";

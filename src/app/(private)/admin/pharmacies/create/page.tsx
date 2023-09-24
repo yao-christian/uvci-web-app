@@ -5,7 +5,7 @@ import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { createPharmacy } from "@/core/services/http-requests/pharmacy";
+import { createPharmacy } from "@/core/infra/http-requests/pharmacy";
 import { Input } from "@/shared/components/forms";
 import { CreatePharmacyDto } from "@/core/domain";
 import Button from "@/shared/components/button";

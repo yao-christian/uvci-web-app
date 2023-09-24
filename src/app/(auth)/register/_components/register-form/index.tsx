@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { CreateUserDto } from "@/core/domain";
-import { signup } from "@/core/services/http-requests/auth";
+import { signup } from "@/core/infra/http-requests/auth";
 import Button from "@/shared/components/button";
 
 import schema from "./schema";

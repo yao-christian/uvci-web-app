@@ -15,13 +15,7 @@ class CreateDiseaseUseCase {
   ) {}
 
   async execute(diseaseData: Disease): Promise<Disease> {
-    try {
-      const createdDisease = await this.diseaseRepository.create(diseaseData);
-      return createdDisease;
-    } catch (error) {
-      console.error(error);
-      throw new Error(`Erreur lors de la création de la maladie`);
-    }
+    return await this.diseaseRepository.create(diseaseData);
   }
 }
 

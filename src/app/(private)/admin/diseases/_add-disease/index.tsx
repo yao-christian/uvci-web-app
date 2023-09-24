@@ -11,7 +11,7 @@ import { CreateDiseaseDto } from "@/core/domain";
 import { Input } from "@/shared/components/form";
 import Drawer from "@/shared/components/drawer";
 import Button from "@/shared/components/button";
-import { createDiseaseRequesteUseCase } from "@/core/app/usecases/disease/create-disease-request";
+import { createDisease } from "@/core/infra/http-requests/disease";
 
 type PropsType = {
   isOPen: boolean;
@@ -47,7 +47,7 @@ export default function AddDisease({ isOPen, toggle }: PropsType) {
         name: values.name,
       };
 
-      await createDiseaseRequesteUseCase.execute(data);
+      await createDisease(data);
       reset();
       router.refresh();
       toggle();

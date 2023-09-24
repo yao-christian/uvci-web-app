@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 import { UserCredentials } from "@/core/domain";
 
-import { getUserByEmail } from "@/core/data/repositories/user";
+import { getUserByEmail } from "@/core/infra/data/repositories/user";
 import { setUserCookie } from "./handle-user-cookies";
 
 export async function signin(

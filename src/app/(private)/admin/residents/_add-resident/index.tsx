@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { NumericFormat } from "react-number-format";
 
 import { CreateResidentDto } from "@/core/domain";
 import { Input } from "@/shared/components/form";
 import Drawer from "@/shared/components/drawer";
 import Button from "@/shared/components/button";
-import { createResident } from "@/core/services/http-requests/resident";
+
+import { createResidentRequest } from "@/core/infra/http-requests/resident";
 
 type PropsType = {
   isOPen: boolean;
@@ -23,7 +25,7 @@ type ValuesType = {
   lastName: string;
   profession: string;
   gender: string;
-  age: number;
+  age: string;
   birthCountry: string;
   nationality: string;
   educationLevel: string;
@@ -37,7 +39,7 @@ const schema = z.object({
   lastName: z.string().min(1, { message: "Last Name is required" }),
   profession: z.string().min(1, { message: "Profession is required" }),
   gender: z.string().min(1, { message: "Gender is required" }),
-  age: z.number().min(1, { message: "Age is required" }),
+  age: z.string().min(1, { message: "Age is required" }),
   birthCountry: z.string().min(1, { message: "Birth Country is required" }),
   nationality: z.string().min(1, { message: "Nationality is required" }),
   educationLevel: z.string().min(1, { message: "Education Level is required" }),
@@ -62,25 +64,21 @@ export default function AddResident({ isOPen, toggle }: PropsType) {
     resolver: zodResolver(schema),
   });
 
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+
   const handleAdd: SubmitHandler<ValuesType> = async (values) => {
     try {
       setIsSubmitting(true);
 
       const data: CreateResidentDto = {
-        firstName: "",
-        lastName: "",
-        profession: "",
-        gender: "",
-        age: 0,
-        birthCountry: "",
-        nationality: "",
-        educationLevel: "",
-        identificationNumber: "",
-        email: "",
-        phoneNumber: "",
+        ...values,
+        age: Number(values.age),
       };
 
-      await createResident(data);
+      await createResidentRequest(data);
+
       reset();
       router.refresh();
       toggle();
@@ -105,8 +103,8 @@ export default function AddResident({ isOPen, toggle }: PropsType) {
 
       <hr className="my-1" />
 
-      <form className="px-4">
-        <div className="space-y-5 mt-6">
+      <form className="px-4 my-5">
+        <div className="space-y-5">
           <Input
             isRequired
             label="Nom"
@@ -139,12 +137,12 @@ export default function AddResident({ isOPen, toggle }: PropsType) {
             placeholder="Sexe"
           />
 
-          <Input
-            isRequired
-            label="Age"
-            {...register("age")}
-            error={errors.age?.message}
-            placeholder="Age"
+          <Controller
+            control={control}
+            name="age"
+            render={({ field }) => (
+              <NumericFormat placeholder="Age" {...field} customInput={Input} />
+            )}
           />
 
           <Input
@@ -153,6 +151,22 @@ export default function AddResident({ isOPen, toggle }: PropsType) {
             {...register("nationality")}
             error={errors.nationality?.message}
             placeholder="Nationilité"
+          />
+
+          <Input
+            isRequired
+            label="Profession"
+            {...register("profession")}
+            error={errors.profession?.message}
+            placeholder="Profession"
+          />
+
+          <Input
+            isRequired
+            label="Carte d'identité"
+            {...register("identificationNumber")}
+            error={errors.identificationNumber?.message}
+            placeholder="Carte d'identité"
           />
 
           <Input
