@@ -29,7 +29,7 @@ export default function Login() {
     try {
       setIsSubmitting(true);
       await signin(data);
-      router.replace("/admin/profile");
+      router.push("/admin/profile");
     } catch (error) {
       console.error(error);
     } finally {

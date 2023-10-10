@@ -160,7 +160,7 @@ export default function Home() {
                   href="#"
                   className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
                 >
-                  Subscribe to this plan
+                  Voir plus
                 </a>
               </li>
             </ul>
@@ -206,7 +206,7 @@ export default function Home() {
                   href="#"
                   className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
                 >
-                  Subscribe to this plan
+                  Voir plus
                 </a>
               </li>
             </ul>
@@ -271,7 +271,7 @@ export default function Home() {
                   href="#"
                   className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
                 >
-                  Subscribe to this plan
+                  Voir plus
                 </a>
               </li>
             </ul>

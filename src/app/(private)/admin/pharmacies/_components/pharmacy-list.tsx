@@ -1,3 +1,7 @@
+"use client";
+
+import { use } from "react";
+
 import Link from "next/link";
 
 import { Pharmacy } from "@/core/domain";
@@ -5,15 +9,20 @@ import { Tbody, Table, Tr, Th, Td } from "@/shared/components/table/elements";
 import { SimpleTable } from "@/shared/components/table/simple-table";
 
 type PropsType = {
-  pharmacies: Pharmacy[];
+  pharmaciesPromise: Promise<Pharmacy[]>;
 };
 
-export default function PharmacyList({ pharmacies }: PropsType) {
+export default function PharmacyList({ pharmaciesPromise }: PropsType) {
+  const pharmacies = use(pharmaciesPromise);
+
   return (
     <SimpleTable>
       <SimpleTable.Header title="Pharmacies">
         <input className="input" placeholder="Recherche..." />
-        <Link href="/admin/pharmacies/create" className="btn btn-primary w-28">
+        <Link
+          href="/admin/pharmacies/add-pharmacy"
+          className="btn btn-primary w-28"
+        >
           Ajouter
         </Link>
       </SimpleTable.Header>
