@@ -10,8 +10,7 @@ export default function Home() {
             Université Virtuelle de Côte d'Ivoire (UVCI)
           </h1>
           <p className="mt-3 max-w-sm mx-auto text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-2xl lg:max-w-3xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            totam harum fugit est ipsam quia?
+            Bienvenue sur le site d'inclusion communautre d'ALLAKRO
           </p>
 
           <div className="mt-5 max-w-md mx-auto flex justify-center items-center flex-col space-y-5 sm:space-y-0 sm:flex-row md:mt-8">
